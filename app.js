@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
   // ID Гугл таблицы
   const SHEET_ID =
-    "2PACX-1vTHMZ6zDRciBsK1qpBsafc4cwUIbGF6DtAryE8Dw0zaJgC0Tf3ibH8DxhKDoYWpr-TmcGLM0igq1mnJ";
+    "2PACX-1vTKOLQ6_-_BafhY1dZaLwgj7P_3TMlPCJaAR94NpCgEMw8bkbiVruIGeelIlx0xr9QUdYUDvPm2lTvh";
   const URL = `https://docs.google.com/spreadsheets/d/e/${SHEET_ID}/pub?output=csv`;
 
   const track = document.querySelector(".slider-track");
