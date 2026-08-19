@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>InfoPanel</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrap">
+        <!-- Валюта -->
+        <div class="currency">
+          <div class="currency-widget" id="currency-widget">
+            <div class="currency-row">
+              <div class="currency-name">
+                <span class="flag">
+                  <img
+                    src="https://flagcdn.com/16x12/us.png"
+                    srcset="
+                      https://flagcdn.com/32x24/us.png 2x,
+                      https://flagcdn.com/48x36/us.png 3x
+                    "
+                    width="20"
+                    height="15"
+                    alt="United States" /></span
+                >USD
+              </div>
+              <div class="rate" id="usd">—</div>
+            </div>
+            <div class="currency-row">
+              <div class="currency-name">
+                <span class="flag"
+                  ><img
+                    src="https://flagcdn.com/16x12/eu.png"
+                    srcset="
+                      https://flagcdn.com/32x24/eu.png 2x,
+                      https://flagcdn.com/48x36/eu.png 3x
+                    "
+                    width="20"
+                    height="15"
+                    alt="European Union" /></span
+                >EUR
+              </div>
+              <div class="rate" id="eur">—</div>
+            </div>
+            <div class="currency-row">
+              <div class="currency-name">
+                <span class="flag">
+                  <img
+                    src="https://flagcdn.com/16x12/ru.png"
+                    srcset="
+                      https://flagcdn.com/32x24/ru.png 2x,
+                      https://flagcdn.com/48x36/ru.png 3x
+                    "
+                    width="20"
+                    height="15"
+                    alt="Russia" /></span
+                >RUB
+              </div>
+              <div class="rate" id="rub">—</div>
+            </div>
+          </div>
+        </div>
+        <!-- Название -->
+        <h1 class="header_title">SAT<span>&#x2022;</span>TOWER</h1>
+        <!-- Часы -->
+        <div id="id_clock"></div>
+      </div>
+    </div>
+    <div class="main-container">
+      <!-- Список арендаторов -->
+      <div class="tenant-slider-container">
+        <div class="loader">Загрузка данных арендаторов...</div>
+        <div class="slider-track"></div>
+        <div class="slider-nav"></div>
+      </div>
+    </div>
+    <!-- Погода -->
+    <div class="weather">
+      <a
+        class="weatherwidget-io"
+        href="https://forecast7.com/ru/51d1671d47/astana/"
+        data-label_1="АСТАНА"
+        data-label_2="ПОГОДА"
+        data-days="3"
+        data-theme="marine"
+        data-icons="Climacons Animated"
+        >ASTANA WEATHER</a
+      >
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
