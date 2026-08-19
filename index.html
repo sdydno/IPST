@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>InfoPanel</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrap">
+        <!-- Валюта -->
+        <div class="currency">
+          <div class="currency-widget" id="currency-widget">
+            <div class="currency-row">
+              <div class="currency-name">
+                <span class="flag">
+                  <img
+                    src="https://flagcdn.com/16x12/us.png"
+                    srcset="
+                      https://flagcdn.com/32x24/us.png 2x,
+                      https://flagcdn.com/48x36/us.png 3x
+                    "
+                    width="20"
+                    height="15"
+                    alt="United States" /></span
+                >USD
+              </div>
+              <div class="rate" id="usd">—</div>
+            </div>
+            <div class="currency-row">
+              <div class="currency-name">
+                <span class="flag"
+                  ><img
+                    src="https://flagcdn.com/16x12/eu.png"
+                    srcset="
+                      https://flagcdn.com/32x24/eu.png 2x,
+                      https://flagcdn.com/48x36/eu.png 3x
+                    "
+                    width="20"
+                    height="15"
+                    alt="European Union" /></span
+                >EUR
+              </div>
+              <div class="rate" id="eur">—</div>
+            </div>
+            <div class="currency-row">
+              <div class="currency-name">
+                <span class="flag">
+                  <img
+                    src="https://flagcdn.com/16x12/ru.png"
+                    srcset="
+                      https://flagcdn.com/32x24/ru.png 2x,
+                      https://flagcdn.com/48x36/ru.png 3x
+                    "
+                    width="20"
+                    height="15"
+                    alt="Russia" /></span
+                >RUB
+              </div>
+              <div class="rate" id="rub">—</div>
+            </div>
+          </div>
+        </div>
+        <!-- Название -->
+        <div class="waviy">
+          <span style="--i: 1">
+            <svg
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              viewBox="0 0 133.93 162.71"
+            >
+              <path
+                fill="#ed2224"
+                class="st0"
+                d="M133.93 162.71 106.26 162.71 66.73 62.29 27.9 162.71 0 162.71 66.96 0 133.93 162.71z"
+              />
+            </svg>
+          </span>
+          <span style="--i: 2"
+            ><svg
+              id="Layer_2"
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              viewBox="0 0 133.93 162.71"
+            >
+              <path
+                fill="#ed2224"
+                class="st0"
+                d="M121.31.18v28.36c-24.44.06-50.62-2.32-71.76,12.17-28.73,19.69-28.53,68.33.83,87.33,12.82,8.3,28.49,10.26,43.49,10.68v-46.49h-28.83v-27.89h55.81v102.28l-36.53-.45C14.69,167.72-24.49,88.56,16.95,33.22,41.76.09,83.3-.65,121.31.18Z"
+              />
+            </svg>
+          </span>
+          <span style="--i: 3"
+            ><svg
+              id="Layer_3"
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              viewBox="0 0 133.93 162.71"
+            >
+              <path
+                fill="#ed2224"
+                class="st0"
+                d="M133.93 162.71 106.26 162.71 66.73 62.29 27.9 162.71 0 162.71 66.96 0 133.93 162.71z"
+              />
+            </svg>
+          </span>
+          <span style="--i: 4"
+            ><svg
+              id="Layer_4"
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              viewBox="0 0 133.93 162.71"
+            >
+              <path
+                fill="#ed2224"
+                class="st0"
+                d="M.47.02L57.45,0c6.21.7,12.28,1.86,18.05,4.27,38.26,15.95,36.17,72.11-2.95,84.77l37.66,76.94-28.76.39-34.95-75.24h-19.53v75.78H0v-101.35h60.69c2.29,0,7.18-2.49,9.03-3.99,9.93-8.05,9.25-25.99-2.6-31.72-.83-.4-4.91-1.94-5.5-1.94H.47V.02Z"
+              />
+            </svg>
+          </span>
+        </div>
+        <!-- Часы -->
+        <div id="id_clock"></div>
+      </div>
+    </div>
+    <div class="main-container">
+      <!-- Список арендаторов -->
+      <div class="tenant-slider-container">
+        <div class="loader">Загрузка данных арендаторов...</div>
+        <div class="slider-track"></div>
+        <div class="slider-nav"></div>
+      </div>
+    </div>
+    <!-- Погода -->
+    <div class="weather">
+      <a
+        class="weatherwidget-io"
+        href="https://forecast7.com/ru/51d1671d47/astana/"
+        data-label_1="АСТАНА"
+        data-label_2="ПОГОДА"
+        data-days="3"
+        data-theme="marine"
+        data-icons="Climacons Animated"
+        >ASTANA WEATHER</a
+      >
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
