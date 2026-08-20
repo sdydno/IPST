@@ -18,7 +18,6 @@ body {
   font-family: Arial, sans-serif;
   padding: 20px;
   background-color: #191b22;
-  /* Упрощенный паттерн фона, не нагружающий процессор TV */
   background-image: radial-gradient(#20222a 15%, transparent 16%), radial-gradient(#20222a 15%, transparent 16%);
   background-size: 60px 60px;
   background-position: 0 0, 30px 30px;
@@ -37,12 +36,14 @@ body::-webkit-scrollbar {
   margin: 0 auto;
 }
 
+/* Шапка */
 .wrap {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 140px;
+  height: 140px;
+  margin-bottom: 10px;
 }
 
 /* Виджет валют */
@@ -96,7 +97,7 @@ body::-webkit-scrollbar {
   font-size: 100px;
   font-weight: 300;
   text-align: center;
-  color: #d5ad6d; /* Фоллбек для старых браузеров */
+  color: #d5ad6d;
   background: -webkit-linear-gradient(#d5ad6d, #e2ba78, #a37e43, #91703b, #d5ad6d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -114,7 +115,7 @@ body::-webkit-scrollbar {
   font-family: "digitalcyrillic1", sans-serif;
 }
 
-/* Главный блок слайдера */
+/* Центрирование главного блока слайдера */
 .main-container {
   display: -webkit-box;
   display: flex;
@@ -123,26 +124,42 @@ body::-webkit-scrollbar {
   -webkit-box-align: center;
   align-items: center;
   width: 100%;
-  min-height: calc(100vh - 220px);
+  height: calc(100vh - 260px);
 }
 
 .tenant-slider-container {
   position: relative;
   width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
   overflow: hidden;
 }
 
+/* Индикатор загрузки с пульсацией */
 .loader {
   font-family: "Rubik", sans-serif;
   font-weight: 500;
   color: #ffffff;
   font-size: 40px;
   text-align: center;
+  width: 100%;
+  -webkit-animation: pulse 1.5s ease-in-out infinite;
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 .slider-track {
   display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
+  align-items: center;
   width: 100%;
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
@@ -155,6 +172,8 @@ body::-webkit-scrollbar {
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
   opacity: 0;
   -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
@@ -164,17 +183,15 @@ body::-webkit-scrollbar {
   opacity: 1;
 }
 
-.slide-inner {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* Таблицы арендаторов */
+/* Таблицы арендаторов с анимацией всплытия */
 .tenant-table {
   width: 100%;
+  max-width: 1100px;
   border-collapse: collapse;
   font-family: "Rubik", sans-serif;
+  margin: 0 auto;
+  -webkit-animation: fadeIn 0.6s ease-out;
+  animation: fadeIn 0.6s ease-out;
 }
 
 .tenant-table th,
@@ -201,6 +218,34 @@ body::-webkit-scrollbar {
   text-align: right;
 }
 
+/* Навигационные точки */
+.slider-nav {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+  width: 100%;
+}
+
+.slider-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.slider-dot.active {
+  background-color: #d5ad6d;
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
 /* Погода снизу */
 .weather {
   position: fixed;
@@ -208,4 +253,38 @@ body::-webkit-scrollbar {
   right: 0;
   bottom: 0;
   z-index: 10;
+}
+
+/* --- Кейфреймы анимаций (с поддержкой -webkit- для Tizen OS) --- */
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
 }
