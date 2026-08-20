@@ -236,7 +236,7 @@ function digitalClock() {
 
   var clockEl = document.getElementById("id_clock");
   if (clockEl) {
-    clockEl.textContent = hours + ":" + minutes + ":" + seconds;
+    clockEl.textContent = (hours - 1) + ":" + minutes + ":" + seconds;
   }
   setTimeout(digitalClock, 1000);
 }
